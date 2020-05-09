@@ -1,11 +1,39 @@
 
+.card{
+    padding: 10px ;
+}
+.html{
+    height: 100% !important;
+}
+#root{
+    background: black;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
 
+#contenedor{
+    background: black;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
 
-.card-img-top{
+.a{
+    padding: 70px;
+   
+}
+/* .card-img-top{
     padding: 20px;
 }
 
 .card-body{
     padding: 20 !important;
    
-}
+} */

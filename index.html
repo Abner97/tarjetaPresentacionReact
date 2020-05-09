@@ -1,8 +1,10 @@
-<body className="contenedor">
-    <div id="root"></div>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        
+<link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
@@ -16,61 +18,72 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
-    <script type="text/babel">
-        const rootElement = document.getElementById('root');
-
-        /* Business Card component
-         * @param name - the name of the person displayed in the business card
-         * @param email
-         * @param phone
-         * @param headline - a brief description that describes what the person does in 120 characters or less
-         */
-
-        // Add your component here :)
-        const props ={
-            name: 'Abraham Vega',
-            email: 'abraham.vega@utp.ac.pa',
-            phone: '+507 60799567',
-            headline: 'Soy estudiante de Ingenieria en Sistemas y Computación en la Universidad Tecnológica de Panamá'
-        }
-        
-
-        const Card = (props) => {
-            console.log(props);
-            return (
-                <div className="d-flex w-100 justify-content-center align-items-center h-75">
-                    <div className="card  w-75 h-75">
-                    <img src="./assets/perfil.jpg" className="card-img-top w-20 h-20" alt="..." />
-                    <div className="card-body">
-                        <h5 className="card-title">{props.name}</h5>
-                        <hr/>
-                        <h6 class="card-subtitle mb-2 text-muted">Email:</h6>
-                        <p className="card-text">{props.email}</p>
-                        <h6 class="card-subtitle mb-2 text-muted">Phone:</h6>
-                        <p className="card-text">{props.phone}</p>
-                        <h6 class="card-subtitle mb-2 text-muted">About Me:</h6>
-                        <p className="card-text">{props.headline}</p>
+    </head>
+    <body id="contenedor">
+        <div id="root"></div>
+       
+        <script type="text/babel">
+            const rootElement = document.getElementById('root');
+    
+            /* Business Card component
+             * @param name - the name of the person displayed in the business card
+             * @param email
+             * @param phone
+             * @param headline - a brief description that describes what the person does in 120 characters or less
+             */
+    
+            // Add your component here :)
+            const props = {
+                name: 'Abraham Vega',
+                email: 'abraham.vega@utp.ac.pa',
+                phone: '+507 60799567',
+                headline: 'Soy estudiante de Ingeniería en Sistemas y Computación en la Universidad Tecnológica de Panamá.'
+            }
+    
+    
+            const Card = (props) => {
+                console.log(props);
+                return (
+                    <div className=" a d-flex w-50 h-50 justify-content-center align-items-center ">
+                       
+                            <div className="card  w-50 h-20">
+                                <img src="./assets/perfil.jpg" className="card-img-top w-80 h-50" alt="Perfil" />
+                                <div className="card-body w-100 h-50">
+                                    <h5 className="card-title">{props.name}</h5>
+                                    <hr />
+                                    <h6 className="card-subtitle mb-2 text-muted">Email:</h6>
+                                    <p className="card-text">{props.email}</p>
+                                    <h6 className="card-subtitle mb-2 text-muted">Phone:</h6>
+                                    <p className="card-text">{props.phone}</p>
+                                    <h6 className="card-subtitle mb-2 text-muted">About Me:</h6>
+                                    <p className="card-text">{props.headline}</p>
+    
+    
+                                </div>
+                            </div>
                         
-                        
+    
                     </div>
-                </div>
-                </div>
-                
-            )
-        }
+    
+                )
+            }
+    
+            Card.propTypes = {
+                name: PropTypes.string.isRequired,
+                email: PropTypes.string.isRequired,
+                phone: PropTypes.string.isRequired,
+                headline: PropTypes.string.isRequired
+            }
+            const app = (
+                <>
+                    <Card {...props} style={{width:"100%"}}/>
+                </>
+            );
+    
+            ReactDOM.render(app, rootElement);
+        </script>
+    </body>
 
-        Card.propTypes={
-            name: PropTypes.string.isRequired,
-            email: PropTypes.string.isRequired,
-            phone: PropTypes.string.isRequired,
-            headline: PropTypes.string.isRequired
-        }
-        const app = (
-            <>
-               <Card {...props}/>
-            </>
-        );
 
-        ReactDOM.render(app, rootElement);
-    </script>
-</body>
+</html>
+    
